@@ -6,13 +6,11 @@
 > 
 > Não esqueça!
 
-## Dependencias a serem instaladas
+# Dependencias a serem instaladas
 
-### Back-end
+## Back-end
 
----
-
-### Instalar o python 3.12.8
+## Instalar o python 3.12.8
 
 1. Começe rodando o comando:
 
@@ -55,6 +53,7 @@
 				> O retorno no terminal deve ser algo parecido com isto:
 				>
 				> 	`damiani@NOTDEF0027:~/Defense1$ source .venv/bin/activate`
+				> 
  				> 	`(.venv) damiani@NOTDEF0027:~/Defense1$`
 
 	- Instalando o restante das bibliotecas:
@@ -63,3 +62,5 @@
 		- `pip install <NOME_DA_LIB>`
 		- para instalar as bibliotecas desta lista na seguinte ordem:
 			1. Flask
+
+---
