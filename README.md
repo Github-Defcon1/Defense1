@@ -3,12 +3,13 @@
 ---
 
 ## Dependencias a serem instaladas
+
 ### Back-end
 
-1.python 3.12.8
-	> pip
-	> virtualenv
-	> Numpy
-	> Pandas
-	> Django/Flask
-	> SQLAlchemy
+1. python 3.12.8
+> pip
+> virtualenv
+> Numpy
+> Pandas
+> Django/Flask
+> SQLAlchemy
