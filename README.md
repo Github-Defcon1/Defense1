@@ -1,6 +1,6 @@
 # Defense1 App - Road to beta
 
-	![Defense1 icon!](/assets/file.png "Defense1 icon!")
+![Defense1 icon!](/assets/file.png "Defense1 icon!")
 
 > # Nota do dia 26-12
 > 
