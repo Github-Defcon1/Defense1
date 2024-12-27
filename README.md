@@ -63,4 +63,18 @@
 		- para instalar as bibliotecas desta lista na seguinte ordem:
 			1. Flask
 
----
+
+> # Cola de comandos:
+> ## Virtual env:
+>	 Entrar no ambiente virtual
+>
+> 	`source .venv/bin/activate`
+>
+> 	Para sair:
+>
+> 	`deactivate`
+>
+> ## Para subir alterações no app:
+>
+>	`export FLASK_APP=app`
+>	`flask run`
