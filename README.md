@@ -77,4 +77,5 @@
 > ## Para subir alterações no app:
 >
 >	`export FLASK_APP=app`
+>
 >	`flask run`
