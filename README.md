@@ -61,7 +61,7 @@ Branch que será criada dendo da branch **dev-env** que será a respeito da func
 	- Agora faça o merge
 		`git merge dev-env`
 
-- Agora basta fazer o push de todas as alterações feitas
+- Agora basta fazer o commit de todas as alterações feitas
 
 # Back-end
 
