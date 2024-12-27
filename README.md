@@ -2,11 +2,66 @@
 
 ![Defense1 icon!](/assets/file.png "Defense1 icon!")
 
-> # Nota do dia 26-12
-> 
-> `sudo apt update && sudo apt upgrade`
-> 
-> Não esqueça!
+---
+# Branches e merges
+
+## O padrão que vamos seguir será o seguinte:
+
+### 1. **main**: 
+Branch principal de produção o merge das demais branchs nela só ocorreram quando as funcionalidades desenvolvidas em suas respectivas branchs forem **validadas** na branch **dev-env**
+
+### 2. **dev-env**:
+Branch responsavel por manter o ambiente de dev e o ambiente de prod separados, aqui serão realizados todos os testes necessarios antes de serem incorportados a **main**
+
+### 3. **NOME_DA_FUNCIONALIDADE**
+Branch que será criada dendo da branch **dev-env** que será a respeito da funcionalidade que está sendo desenvolvida
+
+
+- Primeira coisa que devemos perceber é que ao clonar o repositorio, você estará na branch "**main**"
+
+	- Para checar isso, basta digitar o código:
+	
+		`git branch`
+
+	- você deverá ter um retorno parecido com isso em seu terminal
+	
+		```bash
+		damiani@NOTDEF0027:~/Defense1$ git branch
+		dev-env
+		* main
+		``` 	
+
+- Agora comece por criar uma branch que seja de acordo com a atividade que vc esteja realizado nesta sprint
+
+	- Primeiro garante que você esteja na branch dev-env
+		```bash
+		damiani@NOTDEF0027:~/Defense1$ git checkout dev-env
+		damiani@NOTDEF0027:~/Defense1$ git branch
+		* dev-env
+		main
+		```
+
+	- Agora basta criar um da branch dev-env a respeito da funcionalidade que será desenvolvida:
+
+		`git checkout -b <NOME_DA_SUA_BRANCH>`
+
+- Assim que a funcionalidade for desenvolvida faça o merge para a dev-env para validação
+	
+	- Primeiro volte para a dev-env
+		`git checkout dev-env` 
+	
+	- Agora faça o merge
+		`git merge <NOME_DA_SUA_BRANCH>`
+
+- Assim que a funcionalidade for validada faça o merge para a main para enviar para produção
+	
+	- Primeiro volte para a main
+		`git checkout main` 
+	
+	- Agora faça o merge
+		`git merge dev-env`
+
+- Agora basta fazer o push de todas as alterações feitas
 
 # Back-end
 
