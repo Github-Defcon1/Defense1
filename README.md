@@ -43,7 +43,7 @@ Branch que será criada dendo da branch **dev-env** que será a respeito da func
 
 	- Agora basta criar um da branch dev-env a respeito da funcionalidade que será desenvolvida:
 
-		`git checkout -b <NOME_DA_SUA_BRANCH>`
+		`git checkout -b dev-env-<NOME_DA_SUA_BRANCH>`
 
 - Assim que a funcionalidade for desenvolvida faça o merge para a dev-env para validação
 	
@@ -51,7 +51,7 @@ Branch que será criada dendo da branch **dev-env** que será a respeito da func
 		`git checkout dev-env` 
 	
 	- Agora faça o merge
-		`git merge <NOME_DA_SUA_BRANCH>`
+		`git merge dev-env-<NOME_DA_SUA_BRANCH>`
 
 - Assim que a funcionalidade for validada faça o merge para a main para enviar para produção
 	
