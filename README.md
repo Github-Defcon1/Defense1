@@ -109,9 +109,10 @@ Branch que será criada dendo da branch **dev-env** que será a respeito da func
 				>
 				> O retorno no terminal deve ser algo parecido com isto:
 				>
-				> 	`damiani@NOTDEF0027:~/Defense1$ source .venv/bin/activate`
-				> 
-				> 	`(.venv) damiani@NOTDEF0027:~/Defense1$`
+				> 	```Bash
+				>	damiani@NOTDEF0027:~/Defense1$ source .venv/bin/activate
+				> 	(.venv) damiani@NOTDEF0027:~/Defense1$
+				>	```
 
 	- Instalando o restante das bibliotecas:
 
