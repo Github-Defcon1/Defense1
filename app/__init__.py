@@ -17,6 +17,7 @@ def create_app():
 	# Database
 	db.init_app(app)
 	from app.models.dspm_table import DspmTable
+	from app.models.epp_detections_table import EppTable
 	migrate = Migrate(app, db)
 
 	# Módulos

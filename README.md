@@ -229,7 +229,65 @@ Branch que será criada dendo da branch **dev-env** que será a respeito da func
 	sudo systemctl restart postgresql
 	```
 
+## Docker e Docker-compose
 
+### 1. instalando o Docker
+
+- primeiro de tudo atualize os pacotes:
+
+	```
+	sudo apt update && sudo apt upgrade -y
+	```
+
+- Instale as dependencias necessarias:
+	``` 
+	sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+	```
+
+- Adicione a chave GPG do Docker:
+	```
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	```
+
+- Adicione o repositorio do Docker:
+	```
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	```
+
+- Instale o Docker:
+	``` 
+	sudo apt update
+	sudo apt install docker-ce docker-ce-cli containerd.io
+	```
+
+- Verifique a instalação:
+	``` 
+	docker --version
+	```
+
+### 1. instalando o Docker-compose
+
+- Instale o JQ (dependencia do docker-compose):
+	```
+	sudo apt install jq
+	```
+
+- Instale o Docker-compose:
+	```
+	sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	```
+
+- Conceda permissão de execução ao arquivo:
+	``` 
+	sudo chmod +x /usr/local/bin/docker-compose
+	```
+
+- Verifique a instalação:
+	``` 
+	docker-compose --version
+	```
+
+> .
 > # Cola de comandos:
 > ## Virtual env:
 >	 Entrar no ambiente virtual
@@ -250,3 +308,14 @@ Branch que será criada dendo da branch **dev-env** que será a respeito da func
 >	export FLASK_APP=app
 >	flask run
 >	```
+>
+> ## Para subir alterações no banco de dados:
+>
+>	```
+>	export FLASK_APP=app
+>	flask db init
+>	flask db migrate
+>	flask db upgrade
+>	```
+>
+>.

@@ -1,6 +1,6 @@
 class Configuration():
     # autenticação com o banco de dados
-    SQLALCHEMY_DATABASE_URI = "postgresql://admin_damiani:jiugqWzOPsaj1x36vZR0ZIXXeKwtws@localhost:5432/defense1_db"
+    SQLALCHEMY_DATABASE_URI = "postgresql://admin_damiani:W3UV4UhL69S0BpY@localhost:5432/defense1_db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Informações para autenticação das APIs do securiti
