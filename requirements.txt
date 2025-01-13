@@ -1,4 +1,4 @@
-alembic==1.11.1
+alembic==1.12.0        # Atualizado para uma versão mais recente compatível
 blinker==1.6.2
 certifi==2023.5.7
 charset-normalizer==3.1.0
@@ -8,7 +8,7 @@ Flask==2.3.2
 Flask-Cors==4.0.0
 Flask-Migrate==4.0.4
 flask-sqlalchemy==3.0.4
-greenlet==2.0.2
+greenlet==3.1.1        # Última versão compatível com Python 3.12
 idna==3.4
 importlib-metadata==6.7.0
 importlib-resources==5.12.0
@@ -27,7 +27,7 @@ SQLAlchemy==2.0.16
 tomli==2.0.1
 typing-extensions==4.6.3
 urllib3==2.0.3
-uWSGI==2.0.21
+uWSGI==2.0.28    # Atualizado para uma versão mais recente
 waitress==2.1.2
 Werkzeug==2.3.6
 zipp==3.15.0

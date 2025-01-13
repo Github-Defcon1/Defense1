@@ -1,14 +1,14 @@
-FROM python:3.9-slim
-
+FROM python:3.12.3
 RUN apt-get -q -y update
 RUN apt-get install -y gcc
+
 
 ENV USERNAME=admin_damiani
 ENV WORKING_DIR=/home/damiani/Defense1
 
 WORKDIR ${WORKING_DIR}
 
-COPY Defense1 Defense1
+COPY app app
 COPY requirements.txt .
 COPY service_entrypoint.sh .
 
@@ -21,8 +21,12 @@ RUN chmod -R u=rwx,g=rwx ${WORKING_DIR}
 USER ${USERNAME}
 ENV PATH "$PATH:/home/${USERNAME}/.local/bin"
 
+USER root 
 RUN pip install --upgrade pip
+RUN apt-get -q -y update
 RUN pip install -r requirements.txt
+USER ${USERNAME}
+
 
 ENV FLASK_APP=app
 RUN chmod +x service_entrypoint.sh
@@ -31,4 +35,3 @@ EXPOSE 5000
 RUN flask db init
 
 ENTRYPOINT [ "./service_entrypoint.sh" ]
-
