@@ -18,14 +18,14 @@ RUN groupadd ${USERNAME} && \
 RUN chown -R ${USERNAME}:${USERNAME} ${WORKING_DIR}
 RUN chmod -R u=rwx,g=rwx ${WORKING_DIR}
 
-USER ${USERNAME}
-ENV PATH "$PATH:/home/${USERNAME}/.local/bin"
+# USER ${USERNAME}
+ENV PATH "$PATH:/home/damiani/.local/bin"
 
-USER root 
+# USER root 
 RUN pip install --upgrade pip
-RUN apt-get -q -y update
+# RUN apt-get -q -y update
 RUN pip install -r requirements.txt
-USER ${USERNAME}
+# USER ${USERNAME}
 
 
 ENV FLASK_APP=app
