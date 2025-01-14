@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados da API</title>
+</head>
+<body>
+    <h1>Resultados da API</h1>
+    {% if data %}
+        {% if data.get('error') %}
+            <p>{{ data['error'] }}</p>
+        {% else %}
+            {% if data['responses'] %}
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Qtd</th>
+                            <th>Service Type</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for response in data['responses'] %}
+                            <tr>
+                                <td>{{ response['Qtd'] }}</td>
+                                <td>{{ response['service_type'] }}</td>
+                                <td>{{ response['severity'] }}</td>
+                                <td>{{ response['status'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Não há respostas disponíveis.</p>
+            {% endif %}
+        {% endif %}
+    {% else %}
+        <p>Nenhum dado encontrado.</p>
+    {% endif %}
+</body>
+</html>
