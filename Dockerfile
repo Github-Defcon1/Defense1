@@ -1,7 +1,11 @@
 FROM python:3.12.3
-RUN apt-get -q -y update
-RUN apt-get install -y gcc
 
+# Atualizar pacotes e instalar dependências necessárias
+RUN apt-get -q update && apt-get install -y \
+    gcc \
+    libpq-dev \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
 
 ENV USERNAME=admin_damiani
 ENV WORKING_DIR=/home/damiani/Defense1
@@ -18,20 +22,14 @@ RUN groupadd ${USERNAME} && \
 RUN chown -R ${USERNAME}:${USERNAME} ${WORKING_DIR}
 RUN chmod -R u=rwx,g=rwx ${WORKING_DIR}
 
-# USER ${USERNAME}
-ENV PATH "$PATH:/home/damiani/.local/bin"
+# Atualizar pip e instalar dependências
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# USER root 
-RUN pip install --upgrade pip
-# RUN apt-get -q -y update
-RUN pip install -r requirements.txt
-# USER ${USERNAME}
-
-
+# Configurações adicionais
 ENV FLASK_APP=app
 RUN chmod +x service_entrypoint.sh
 
 EXPOSE 5000
 RUN flask db init
 
-ENTRYPOINT [ "./service_entrypoint.sh" ]
+ENTRYPOINT ["./service_entrypoint.sh"]
